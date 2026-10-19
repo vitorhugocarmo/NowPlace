@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b91c1c">
+  <title>NowPlace • Aqui e agora</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="#">NOW<span>PLACE</span><span class="dot">●</span></a><span class="top-tag">Seu momento. Seu lugar.</span></header>
+  <main class="container">
+    <section class="hero"><div><p class="eyebrow">O mundo acontece agora</p><h1>Compartilhe o seu <em>agora.</em></h1><p>Registre duas perspectivas do seu momento e descubra o que acontece perto de você.</p></div><div class="hero-icon" aria-hidden="true">◎</div></section>
+    <div id="message" class="message hidden" role="status" aria-live="polite"></div>
+    <section class="panel profile"><div><h2>Quem está por aqui?</h2><p class="muted">Seu nome aparece nos Nows que você publicar.</p></div><div class="name-controls"><label for="username" class="sr-only">Seu nome</label><input id="username" maxlength="40" placeholder="Como podemos te chamar?" autocomplete="nickname"><button id="saveName" class="btn btn-outline">Salvar nome</button></div></section>
+    <div class="layout"><section class="panel compose"><div class="section-title"><div><span class="eyebrow">CAPTURE O MOMENTO</span><h2>Criar um Now <span class="live">● AO VIVO</span></h2></div></div>
+      <p class="muted">Primeiro fotografe o ambiente. Depois, vire a câmera para sua selfie.</p>
+      <div class="camera-frame"><video id="camera" autoplay muted playsinline></video><div id="cameraPlaceholder" class="camera-placeholder"><span>◎</span><strong>Sua câmera aparece aqui</strong><small>Autorize a câmera para começar • requer HTTPS ou localhost</small></div><span id="cameraStep" class="step-label">ETAPA 1 · AMBIENTE</span></div>
+      <div class="actions"><button id="startCamera" class="btn btn-primary">Ativar câmera</button><button id="capture" class="btn btn-primary" disabled>Capturar ambiente</button><button id="stopCamera" class="btn btn-outline" disabled>Desligar câmera</button></div>
+      <div id="previews" class="previews hidden"><div><span>Ambiente</span><img id="environmentPreview" alt="Foto capturada do ambiente"></div><div><span>Selfie</span><img id="selfiePreview" alt="Selfie capturada"></div></div>
+      <label for="description" class="field-label">O que você está fazendo?</label><textarea id="description" maxlength="280" rows="3" placeholder="Conte o que está rolando por aí..."></textarea>
+      <div class="location-box"><div><strong>📍 Sua localização</strong><p id="locationText" class="muted">Ainda não identificada.</p></div><button id="locate" class="btn btn-outline">Localizar</button></div>
+      <div class="actions bottom-actions"><button id="reset" class="btn btn-ghost">Recomeçar</button><button id="publish" class="btn btn-primary" disabled>Publicar meu Now →</button></div>
+    </section>
+    <section class="panel feed-panel"><div class="section-title"><div><span class="eyebrow">PELO SEU BAIRRO</span><h2>Nows por perto</h2></div><span id="accessIndicator" class="access-indicator">🔒 Bloqueado</span></div><p class="muted">Publique um Now para liberar o feed por 24 horas. Os Nows exibidos são fotos reais armazenadas neste navegador; a API de testes não fornece fotos ou busca por raio.</p>
+      <label for="radius" class="field-label">Raio de busca: <strong id="radiusValue">5 km</strong></label><input type="range" id="radius" min="1" max="50" value="5"><div class="actions"><button id="loadFeed" class="btn btn-primary">Buscar Nows próximos</button></div><div id="feed" class="feed"><div class="empty-state"><span>◉</span><h3>Momentos esperando por você</h3><p>Compartilhe o seu Now para explorar a região.</p></div></div>
+    </section></div>
+    <footer>NowPlace • Projeto Integrador SA2 • Programação Front-End • Profª Andreza Quintas</footer>
+  </main><canvas id="captureCanvas" hidden></canvas><script type="module" src="js/app.js"></script>
+</body></html>
